@@ -100,10 +100,19 @@ async function loadRepositories() {
       throw new Error("Repository data must be a list");
     }
 
-    repositoryCount.textContent = numberFormat.format(events.length);
+    const validEvents = events.filter((event) => (
+      event !== null
+      && typeof event === "object"
+      && !Array.isArray(event)
+      && event.repository !== null
+      && typeof event.repository === "object"
+      && !Array.isArray(event.repository)
+    ));
+
+    repositoryCount.textContent = numberFormat.format(validEvents.length);
     repositoryList.replaceChildren();
 
-    if (events.length === 0) {
+    if (validEvents.length === 0) {
       const emptyState = document.createElement("li");
       emptyState.className = "empty-state";
       emptyState.textContent = "No starred repositories yet.";
@@ -112,16 +121,16 @@ async function loadRepositories() {
       return;
     }
 
-    events.forEach((event, index) => {
+    validEvents.forEach((event, index) => {
       repositoryList.append(createRepositoryItem(event, index));
     });
-    listStatus.textContent = `${numberFormat.format(events.length)} repositories`;
+    listStatus.textContent = `${numberFormat.format(validEvents.length)} repositories`;
   } catch (error) {
     repositoryCount.textContent = "0";
     listStatus.textContent = "Could not load repositories";
     const errorState = document.createElement("li");
     errorState.className = "empty-state";
-    errorState.textContent = "Check that events.json is available from a local web server.";
+    errorState.textContent = "Could not load repositories. Check your connection and the events.json file, then reload the page.";
     repositoryList.replaceChildren(errorState);
     console.error("Could not load starred repositories:", error);
   }
