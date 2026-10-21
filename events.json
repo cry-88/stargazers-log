@@ -1,0 +1,35 @@
+[
+  {
+    "starred_at": "2025-10-18T14:20:00Z",
+    "repository": {
+      "name": "vite",
+      "full_name": "vitejs/vite",
+      "html_url": "https://github.com/vitejs/vite",
+      "description": "Next generation frontend tooling.",
+      "language": "TypeScript",
+      "stargazers_count": 74800
+    }
+  },
+  {
+    "starred_at": "2025-09-06T09:45:00Z",
+    "repository": {
+      "name": "ripgrep",
+      "full_name": "BurntSushi/ripgrep",
+      "html_url": "https://github.com/BurntSushi/ripgrep",
+      "description": "A line-oriented search tool that recursively searches your current directory for a regex pattern.",
+      "language": "Rust",
+      "stargazers_count": 52100
+    }
+  },
+  {
+    "starred_at": "2025-08-22T17:10:00Z",
+    "repository": {
+      "name": "pandas",
+      "full_name": "pandas-dev/pandas",
+      "html_url": "https://github.com/pandas-dev/pandas",
+      "description": "Flexible and powerful data analysis tools for Python.",
+      "language": "Python",
+      "stargazers_count": 46200
+    }
+  }
+]

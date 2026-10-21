@@ -2,10 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Stargazers log</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Stargazers log</h1>
-    <p>A log of the repositories I've starred.</p>
+    <main class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> A personal collection</p>
+          <h1>Stargazers log</h1>
+          <p class="intro">A running log of the open-source projects worth keeping close.</p>
+        </div>
+        <div class="total" aria-label="Total starred repositories">
+          <strong id="repository-count">—</strong>
+          <span>repositories</span>
+        </div>
+      </header>
+
+      <section class="log-section" aria-labelledby="list-heading">
+        <div class="section-heading">
+          <h2 id="list-heading">Recently starred</h2>
+          <p id="list-status" role="status" aria-live="polite">Loading repositories…</p>
+        </div>
+        <ol id="repository-list" class="repository-list"></ol>
+      </section>
+
+      <footer class="page-footer">A small log of things built in the open.</footer>
+    </main>
   </body>
 </html>
